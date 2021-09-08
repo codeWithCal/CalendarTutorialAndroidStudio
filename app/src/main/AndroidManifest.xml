@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarAppExample">
-        <activity android:name=".EventEditActivity"></activity>
+        <activity
+            android:name=".DailyCalendarActivity"
+            android:exported="true" />
+        <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
