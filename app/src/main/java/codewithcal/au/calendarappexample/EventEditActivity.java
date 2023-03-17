@@ -14,8 +14,6 @@ public class EventEditActivity extends AppCompatActivity
     private EditText eventNameET, eventTagET, eventTimeStartHET, eventTimeStartMET, eventTimeEndHET, eventTimeEndMET;
     private TextView eventDateTV;
 
-    private LocalTime time;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -49,6 +47,10 @@ public class EventEditActivity extends AppCompatActivity
             Event newEvent = new Event(eventName, CalendarUtils.selectedDate, eventTime, eventTag);
             Event.eventsList.add(newEvent);
         }
+        finish();
+    }
+
+    public void cancelEventAction(View view) {
         finish();
     }
 }

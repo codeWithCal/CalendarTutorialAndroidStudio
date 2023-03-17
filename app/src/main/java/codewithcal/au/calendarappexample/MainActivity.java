@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
+        startActivity(new Intent(this, InitialQuizActivity.class));
     }
 
     private void initWidgets()
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
+
     }
 
     public void previousMonthAction(View view)
