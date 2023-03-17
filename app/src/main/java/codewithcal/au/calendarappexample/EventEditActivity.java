@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class EventEditActivity extends AppCompatActivity
 {
@@ -42,10 +45,20 @@ public class EventEditActivity extends AppCompatActivity
         // int minuteS = Integer.parseInt(eventTimeStartMET.getText().toString());
         int hourE = Integer.parseInt(eventTimeEndHET.getText().toString());
         // int minuteE = Integer.parseInt(eventTimeEndMET.getText().toString());
+
+        CheckBox checkBox = findViewById(R.id.checkbox_repeat);
+
         for (int i = 0; i <= hourE-hourS; i++){
             LocalTime eventTime = LocalTime.of(hourS + i, 0);
-            Event newEvent = new Event(eventName, CalendarUtils.selectedDate, eventTime, eventTag);
-            Event.eventsList.add(newEvent);
+            if(checkBox.isChecked()) {
+                Date newDate = Date.from(CalendarUtils.selectedDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                Event newEvent = new Event(eventName, CalendarUtils.selectedDate, eventTime, eventTag, android.text.format.DateFormat.format("EEEE", newDate).toString());
+                Event.eventsList.add(newEvent);
+            }
+            else {
+                Event newEvent = new Event(eventName, CalendarUtils.selectedDate, eventTime, eventTag);
+                Event.eventsList.add(newEvent);
+            }
         }
         finish();
     }

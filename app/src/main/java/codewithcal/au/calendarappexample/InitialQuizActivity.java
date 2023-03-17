@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -57,10 +58,75 @@ public class InitialQuizActivity extends AppCompatActivity{
             RepeatEvent.repeatList.add(newRepeat);
         }
 
-        for (int i = 0; i <= workE - workS; i++){
-            LocalTime repeat = LocalTime.of(workS + i, 0);
-            RepeatEvent newRepeat = new RepeatEvent(repeat, "Working");
-            RepeatEvent.repeatList.add(newRepeat);
+
+        CheckBox checkBoxMo = findViewById(R.id.checkbox_monday);
+
+        if (checkBoxMo.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Monday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxTu = findViewById(R.id.checkbox_tuesday);
+
+        if (checkBoxTu.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Tuesday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxWe = findViewById(R.id.checkbox_wednesday);
+
+        if (checkBoxWe.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Wednesday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxTh = findViewById(R.id.checkbox_thursday);
+
+        if (checkBoxTh.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Thursday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxFr = findViewById(R.id.checkbox_friday);
+
+        if (checkBoxFr.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Friday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxSa = findViewById(R.id.checkbox_saturday);
+
+        if (checkBoxSa.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Saturday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
+        }
+
+        CheckBox checkBoxSu = findViewById(R.id.checkbox_sunday);
+
+        if (checkBoxSu.isChecked()) {
+            for (int i = 0; i <= workE - workS; i++){
+                LocalTime repeat = LocalTime.of(workS + i, 0);
+                RepeatEvent newRepeat = new RepeatEvent(repeat, "Working", "Sunday");
+                RepeatEvent.repeatList.add(newRepeat);
+            }
         }
 
         startActivity(new Intent(this, DailyCalendarActivity.class));

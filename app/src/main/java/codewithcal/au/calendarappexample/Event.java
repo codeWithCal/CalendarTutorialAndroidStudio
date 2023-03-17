@@ -2,7 +2,9 @@ package codewithcal.au.calendarappexample;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Event
 {
@@ -29,8 +31,13 @@ public class Event
         {
             int eventHour = event.time.getHour();
             int cellHour = time.getHour();
-            if(event.getDate().equals(date) && eventHour == cellHour)
-                events.add(event);
+            Date newDate = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+            if(eventHour == cellHour) {
+                if (event.getDate().equals(date) || event.day.equals(android.text.format.DateFormat.format("EEEE", newDate))) {
+                    Event newEvent = new Event(event.getName(), date, event.getTime(), event.getTag());
+                    events.add(newEvent);
+                }
+            }
         }
 
         return events;
@@ -43,12 +50,20 @@ public class Event
 
     private String tag;
 
-    public Event(String name, LocalDate date, LocalTime time, String tag)
+    private String day;
+
+    public Event(String name, LocalDate date, LocalTime time, String tag, String day)
     {
         this.name = name;
         this.date = date;
         this.time = time;
         this.tag = tag;
+        this.day = day;
+    }
+
+    public Event(String name, LocalDate date, LocalTime time, String tag)
+    {
+        this(name, date, time, tag, "none");
     }
 
     public String getName()
@@ -89,5 +104,15 @@ public class Event
     public void setTag(String tag)
     {
         this.tag = tag;
+    }
+
+    public String getDay()
+    {
+        return day;
+    }
+
+    public void setDay(String day)
+    {
+        this.day = day;
     }
 }

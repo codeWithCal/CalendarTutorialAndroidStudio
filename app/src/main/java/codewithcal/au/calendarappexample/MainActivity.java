@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
-        startActivity(new Intent(this, InitialQuizActivity.class));
+        startActivity(new Intent(this, WelcomeActivity.class));
     }
 
     private void initWidgets()
