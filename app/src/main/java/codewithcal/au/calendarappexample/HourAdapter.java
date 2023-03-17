@@ -1,6 +1,7 @@
 package codewithcal.au.calendarappexample;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,14 @@ public class HourAdapter extends ArrayAdapter<HourEvent>
     private void setEvent(TextView textView, Event event)
     {
         textView.setText(event.getName() + " ("+ event.getTag() +")");
+        if( !(event.getTag().equals("Free Time")) ) {
+            textView.setBackgroundColor(Color.parseColor("#EEEEEE"));
+            textView.setTextColor(Color.parseColor("#000000"));
+        }
+        else {
+            textView.setBackgroundColor(Color.parseColor("#0000FF"));
+            textView.setTextColor(Color.parseColor("#FFFFFF"));
+        }
         textView.setVisibility(View.VISIBLE);
     }
 

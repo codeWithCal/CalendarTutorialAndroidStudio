@@ -14,6 +14,8 @@
             android:exported="true" />
         <activity android:name=".EventEditActivity" />
         <activity android:name=".WeekViewActivity" />
+        <activity android:name=".InitialQuizActivity"/>
+        <activity android:name=".StatsActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

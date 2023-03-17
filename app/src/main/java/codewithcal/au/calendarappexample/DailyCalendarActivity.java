@@ -68,8 +68,22 @@ public class DailyCalendarActivity extends AppCompatActivity
         {
             LocalTime time = LocalTime.of(hour, 0);
             ArrayList<Event> events = Event.eventsForDateAndTime(selectedDate, time);
-            HourEvent hourEvent = new HourEvent(time, events);
-            list.add(hourEvent);
+            ArrayList<Event> events2 = RepeatEvent.eventForTime(time, selectedDate);
+            if (events.size() != 0) {
+                HourEvent hourEvent = new HourEvent(time, events);
+                list.add(hourEvent);
+            }
+            else if (events2.size() != 0){
+                HourEvent hourEvent = new HourEvent(time, events2);
+                list.add(hourEvent);
+            }
+            else {
+                Event newEvent = new Event("Free Time", selectedDate, time, "Free Time");
+                ArrayList<Event> newEvents = new ArrayList<>();
+                newEvents.add(newEvent);
+                HourEvent hourEvent = new HourEvent(time, newEvents);
+                list.add(hourEvent);
+            }
         }
 
         return list;
@@ -90,5 +104,10 @@ public class DailyCalendarActivity extends AppCompatActivity
     public void newEventAction(View view)
     {
         startActivity(new Intent(this, EventEditActivity.class));
+    }
+
+    public void statsAction(View view) {
+
+        startActivity(new Intent(this, StatsActivity.class));
     }
 }

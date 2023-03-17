@@ -69,6 +69,17 @@
         android:layout_gravity="center"
         android:textSize="20sp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stats"
+        android:textColor="@color/blue"
+        android:background="@null"
+        android:textStyle="bold"
+        android:onClick="statsAction"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
     <ListView
         android:id="@+id/hourListView"
         android:layout_width="match_parent"
