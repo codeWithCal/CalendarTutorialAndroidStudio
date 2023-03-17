@@ -33,31 +33,6 @@
             android:textColor="@color/white"
             android:text="Event 1"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@color/blue"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/event2"
-            android:textSize="12sp"
-            android:lines="2"
-            android:textColor="@color/white"
-            android:text="Event 2"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@color/blue"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/event3"
-            android:textSize="12sp"
-            android:lines="2"
-            android:textColor="@color/white"
-            android:text="Event 3"/>
 
     </LinearLayout>
 

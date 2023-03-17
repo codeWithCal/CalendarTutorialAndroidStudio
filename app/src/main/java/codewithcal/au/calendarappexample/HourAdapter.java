@@ -45,47 +45,21 @@ public class HourAdapter extends ArrayAdapter<HourEvent>
     private void setEvents(View convertView, ArrayList<Event> events)
     {
         TextView event1 = convertView.findViewById(R.id.event1);
-        TextView event2 = convertView.findViewById(R.id.event2);
-        TextView event3 = convertView.findViewById(R.id.event3);
 
         if(events.size() == 0)
         {
             hideEvent(event1);
-            hideEvent(event2);
-            hideEvent(event3);
-        }
-        else if(events.size() == 1)
-        {
-            setEvent(event1, events.get(0));
-            hideEvent(event2);
-            hideEvent(event3);
-        }
-        else if(events.size() == 2)
-        {
-            setEvent(event1, events.get(0));
-            setEvent(event2, events.get(1));
-            hideEvent(event3);
-        }
-        else if(events.size() == 3)
-        {
-            setEvent(event1, events.get(0));
-            setEvent(event2, events.get(1));
-            setEvent(event3, events.get(2));
         }
         else
         {
             setEvent(event1, events.get(0));
-            setEvent(event2, events.get(1));
-            event3.setVisibility(View.VISIBLE);
-            String eventsNotShown = String.valueOf(events.size() - 2);
-            eventsNotShown += " More Events";
-            event3.setText(eventsNotShown);
+
         }
     }
 
     private void setEvent(TextView textView, Event event)
     {
-        textView.setText(event.getName());
+        textView.setText(event.getName() + " ("+ event.getTag() +")");
         textView.setVisibility(View.VISIBLE);
     }
 

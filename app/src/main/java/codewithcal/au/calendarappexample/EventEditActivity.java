@@ -11,8 +11,8 @@ import java.time.LocalTime;
 
 public class EventEditActivity extends AppCompatActivity
 {
-    private EditText eventNameET;
-    private TextView eventDateTV, eventTimeTV;
+    private EditText eventNameET, eventTagET, eventTimeStartHET, eventTimeStartMET, eventTimeEndHET, eventTimeEndMET;
+    private TextView eventDateTV;
 
     private LocalTime time;
 
@@ -22,23 +22,33 @@ public class EventEditActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_edit);
         initWidgets();
-        time = LocalTime.now();
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
-        eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
     }
 
     private void initWidgets()
     {
         eventNameET = findViewById(R.id.eventNameET);
+        eventTagET = findViewById(R.id.eventTagET);
         eventDateTV = findViewById(R.id.eventDateTV);
-        eventTimeTV = findViewById(R.id.eventTimeTV);
+        eventTimeStartHET = findViewById(R.id.eventTimeStartHET);
+        eventTimeStartMET = findViewById(R.id.eventTimeStartMET);
+        eventTimeEndHET = findViewById(R.id.eventTimeEndHET);
+        eventTimeEndMET = findViewById(R.id.eventTimeEndMET);
     }
 
     public void saveEventAction(View view)
     {
         String eventName = eventNameET.getText().toString();
-        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
-        Event.eventsList.add(newEvent);
+        String eventTag = eventTagET.getText().toString();
+        int hourS = Integer.parseInt(eventTimeStartHET.getText().toString());
+        // int minuteS = Integer.parseInt(eventTimeStartMET.getText().toString());
+        int hourE = Integer.parseInt(eventTimeEndHET.getText().toString());
+        // int minuteE = Integer.parseInt(eventTimeEndMET.getText().toString());
+        for (int i = 0; i <= hourE-hourS; i++){
+            LocalTime eventTime = LocalTime.of(hourS + i, 0);
+            Event newEvent = new Event(eventName, CalendarUtils.selectedDate, eventTime, eventTag);
+            Event.eventsList.add(newEvent);
+        }
         finish();
     }
 }

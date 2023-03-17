@@ -41,11 +41,14 @@ public class Event
     private LocalDate date;
     private LocalTime time;
 
-    public Event(String name, LocalDate date, LocalTime time)
+    private String tag;
+
+    public Event(String name, LocalDate date, LocalTime time, String tag)
     {
         this.name = name;
         this.date = date;
         this.time = time;
+        this.tag = tag;
     }
 
     public String getName()
@@ -76,5 +79,15 @@ public class Event
     public void setTime(LocalTime time)
     {
         this.time = time;
+    }
+
+    public String getTag()
+    {
+        return tag;
+    }
+
+    public void setTag(String tag)
+    {
+        this.tag = tag;
     }
 }
