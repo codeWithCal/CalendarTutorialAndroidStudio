@@ -34,7 +34,7 @@ public class Event
             Date newDate = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
             if(eventHour == cellHour) {
                 if (event.getDate().equals(date) || event.day.equals(android.text.format.DateFormat.format("EEEE", newDate))) {
-                    Event newEvent = new Event(event.getName(), date, event.getTime(), event.getTag());
+                    Event newEvent = new Event(event.getName(), date, event.getTime(), event.getTag(), event.getPlace());
                     events.add(newEvent);
                 }
             }
@@ -52,18 +52,25 @@ public class Event
 
     private String day;
 
-    public Event(String name, LocalDate date, LocalTime time, String tag, String day)
+    private String place;
+
+    public Event(String name, LocalDate date, LocalTime time, String tag, String day, String place)
     {
         this.name = name;
         this.date = date;
         this.time = time;
         this.tag = tag;
         this.day = day;
+        this.place = place;
     }
 
     public Event(String name, LocalDate date, LocalTime time, String tag)
     {
-        this(name, date, time, tag, "none");
+        this(name, date, time, tag, "none", "none");
+    }
+    public Event(String name, LocalDate date, LocalTime time, String tag, String place)
+    {
+        this(name, date, time, tag, "none", place);
     }
 
     public String getName()
@@ -115,4 +122,8 @@ public class Event
     {
         this.day = day;
     }
+
+    public String getPlace() {return place;}
+
+    public void setPlace(String place) {this.place = place;}
 }

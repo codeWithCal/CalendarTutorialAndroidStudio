@@ -40,7 +40,18 @@ public class HourAdapter extends ArrayAdapter<HourEvent>
     private void setHour(View convertView, LocalTime time)
     {
         TextView timeTV = convertView.findViewById(R.id.timeTV);
-        timeTV.setText(CalendarUtils.formattedShortTime(time));
+        int hour = time.getHour();
+        String timeFrame = "AM";
+        if (hour == 0) {
+            hour = 12;
+        }
+        else if (hour >= 12) {
+            if (hour > 12){
+                hour = hour % 12;
+            }
+            timeFrame = "PM";
+        }
+        timeTV.setText(hour + ":00 " + timeFrame);
     }
 
     private void setEvents(View convertView, ArrayList<Event> events)
@@ -60,7 +71,12 @@ public class HourAdapter extends ArrayAdapter<HourEvent>
 
     private void setEvent(TextView textView, Event event)
     {
-        textView.setText(event.getName() + " ("+ event.getTag() +")");
+        if(event.getPlace().compareTo("none") == 0) {
+            textView.setText(event.getName());
+        }
+        else {
+            textView.setText(event.getName() + " @ " + event.getPlace());
+        }
         if( !(event.getTag().equals("Free Time")) ) {
             textView.setBackgroundColor(Color.parseColor("#EEEEEE"));
             textView.setTextColor(Color.parseColor("#000000"));

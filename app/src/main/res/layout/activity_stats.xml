@@ -34,7 +34,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="49 hrs"
+        android:id="@+id/averageStats"
+        android:text="X hrs"
         android:textSize="30dp"
         android:textColor="@color/black"
         android:layout_gravity="center"/>
@@ -48,7 +49,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Monday: 7 hrs"
+            android:text="Monday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mondayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -63,7 +72,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tuesday: 7 hrs"
+            android:text="Tuesday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tuesdayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -78,7 +95,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wednesday: 7 hrs"
+            android:text="Wednesday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/wednesdayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -93,7 +118,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thursday: 7 hrs"
+            android:text="Thursday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/thursdayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -108,7 +141,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Friday: 7 hrs"
+            android:text="Friday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fridayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -123,7 +164,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="Saturday: 7 hrs"
+            android:text="Saturday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saturdayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
@@ -138,7 +187,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sunday: 7 hrs"
+            android:text="Sunday: "
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sundayStats"
+            android:text="X hrs"
             android:textSize="30dp"
             android:textColor="@color/black"/>
 

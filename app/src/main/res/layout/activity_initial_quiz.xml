@@ -61,6 +61,14 @@
             android:ems="10"
             android:inputType="phone"/>
 
+        <Switch
+            android:id="@+id/sleepSSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="AM"
+            android:textOn="PM"
+            android:showText="true"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="60dp"
@@ -98,6 +106,14 @@
             android:textSize="20sp"
             android:ems="10"
             android:inputType="phone"/>
+
+        <Switch
+            android:id="@+id/sleepESwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="AM"
+            android:textOn="PM"
+            android:showText="true"/>
 
     </LinearLayout>
 
@@ -146,6 +162,14 @@
             android:ems="10"
             android:inputType="phone"/>
 
+        <Switch
+            android:id="@+id/workSSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="AM"
+            android:textOn="PM"
+            android:showText="true"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="60dp"
@@ -183,6 +207,13 @@
             android:textSize="20sp"
             android:ems="10"
             android:inputType="phone"/>
+        <Switch
+            android:id="@+id/workESwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textOff="AM"
+            android:textOn="PM"
+            android:showText="true"/>
 
     </LinearLayout>
 
